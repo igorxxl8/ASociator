@@ -1,0 +1,78 @@
+﻿@model ASociator.ViewModels.ProfileViewModel
+
+@{
+    ViewData["Title"] = Model.FirstName + " " + Model.LastName;
+}
+
+
+<div>
+    <a asp-action="Edit" class="btn btn-warning" asp-route-id="@Model.Id">Edit</a>
+</div>
+
+<div class="clear_fix profile_info_row">
+    <div class="labela f1_1">
+        <h2>@ViewData["Title"]</h2>
+    </div>
+    <div class="ladeled">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+</div>
+
+<div>
+    <hr />
+    <div class="clear_fix profile_info_row">
+        <div class="labela f1_1">
+            @Html.DisplayNameFor(model => model.Email)
+        </div>
+        <div class="ladeled">
+            @Html.DisplayFor(model => model.Email)
+        </div>
+    </div>
+
+    <div class="clear_fix profile_info_row">
+        <div class="labela f1_1">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </div>
+        <div class="ladeled">
+            @Html.DisplayFor(model => model.FirstName)
+        </div>
+    </div>
+
+
+    <div class="clear_fix profile_info_row">
+        <div class="labela f1_1">
+            @Html.DisplayNameFor(model => model.LastName)
+        </div>
+        <div class="ladeled">
+            @Html.DisplayFor(model => model.LastName)
+        </div>
+    </div>
+
+
+    <div class="clear_fix profile_info_row">
+        <div class="labela f1_1">
+            @Html.DisplayNameFor(model => model.BirdthDay)
+        </div>
+        <div class="ladeled">
+            @Html.DisplayFor(model => model.BirdthDay)
+        </div>
+    </div>
+
+    <div class="clear_fix profile_info_row">
+        <div class="labela f1_1">
+            @Html.DisplayNameFor(model => model.Country)
+        </div>
+        <div class="ladeled">
+            @Html.DisplayFor(model => model.Country)
+        </div>
+    </div>
+
+    <div class="clear_fix profile_info_row">
+        <div class="labela f1_1">
+            @Html.DisplayNameFor(model => model.City)
+        </div>
+        <div class="ladeled">
+            @Html.DisplayFor(model => model.City)
+        </div>
+    </div>
+</div>

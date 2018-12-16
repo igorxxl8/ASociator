@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Developer";
+}
+<h2>@ViewData["Title"]</h2>
+
+<address>
+    <abbr title="Company">&copy;</abbr>
+    Turcevich Igor 653502<br />
+    <abbr title="Address">A:</abbr>
+    Belarus, Minsk<br />
+    <abbr title="Phone">P:</abbr>
+    +375298215820
+</address>
+
+<address>
+    <strong>Support:</strong> <a href="mailto:@ViewData["admin_email"].ToString()">@ViewData["admin_email"].ToString()</a><br />
+</address>
