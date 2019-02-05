@@ -120,7 +120,7 @@ WriteAttributeValue("", 556, Convert.ToBase64String(Model.Avatar), 556, 37, fals
             WriteLiteral("                        ");
             EndContext();
             BeginContext(697, 92, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ecfcbd21525b467388e920834a40929f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "8195b27882d44b2daa83fb6d7f7f4157", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -149,7 +149,7 @@ WriteAttributeValue("", 556, Convert.ToBase64String(Model.Avatar), 556, 37, fals
             WriteLiteral("                </div>\r\n                <div class=\"grid-item\">\r\n                    <h3>\r\n                        ");
             EndContext();
             BeginContext(929, 107, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "83264fa27f9340a780b7c4c943f31f31", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8bedd081779a4bdb996afad355c6417f", async() => {
                 BeginContext(1001, 15, false);
 #line 32 "D:\5term\IGI\ASociator\ASociator\Views\Shared\FriendPartial.cshtml"
                                                                                           Write(Model.FirstName);
@@ -220,7 +220,7 @@ WriteAttributeValue("", 556, Convert.ToBase64String(Model.Avatar), 556, 37, fals
             WriteLiteral("</h4>\r\n                </div>\r\n                <div class=\"grid-item\">\r\n                    <p class=\"button\">\r\n                        ");
             EndContext();
             BeginContext(1252, 178, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "42304594e81f459b9274692f83f025c6", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a77e29b0c5c54aafbca01483c06b588a", async() => {
                 BeginContext(1351, 30, true);
                 WriteLiteral("\r\n                            ");
                 EndContext();
@@ -268,7 +268,7 @@ WriteAttributeValue("", 556, Convert.ToBase64String(Model.Avatar), 556, 37, fals
             WriteLiteral("\r\n                    </p>\r\n                    <p class=\"button\">\r\n                        ");
             EndContext();
             BeginContext(1522, 202, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2839e2a8c8d14b0b8c807301b47214ca", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "90de46eb447d47e3980c1753f5c10994", async() => {
                 BeginContext(1639, 30, true);
                 WriteLiteral("\r\n                            ");
                 EndContext();

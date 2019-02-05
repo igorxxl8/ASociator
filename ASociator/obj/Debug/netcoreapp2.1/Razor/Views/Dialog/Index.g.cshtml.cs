@@ -110,7 +110,7 @@ Write(ViewData["Dialogs"]);
             WriteLiteral("</td>\r\n            <td>\r\n                ");
             EndContext();
             BeginContext(407, 157, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3899fb39a1524cf9b9178616dcc68d1f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dc29d492c0f54a9096aa5e225c382cb7", async() => {
                 BeginContext(503, 22, true);
                 WriteLiteral("\r\n                    ");
                 EndContext();
@@ -158,7 +158,7 @@ Write(ViewData["Dialogs"]);
             WriteLiteral("\r\n\r\n                ");
             EndContext();
             BeginContext(584, 167, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e913f0e1026441ec960df0bc262cc982", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c557e24e520f465c81bb951cf2035314", async() => {
                 BeginContext(688, 22, true);
                 WriteLiteral("\r\n                    ");
                 EndContext();

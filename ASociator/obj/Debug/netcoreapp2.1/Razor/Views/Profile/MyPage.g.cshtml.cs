@@ -89,7 +89,7 @@ Write(ViewData["Title"]);
             WriteLiteral(" |\r\n    ");
             EndContext();
             BeginContext(216, 91, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "09ebb4868d2f4f3ca97c247016a858f6", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "52d9a5b2142e483fb2eb2c7878831ce6", async() => {
                 BeginContext(287, 16, false);
 #line 11 "D:\5term\IGI\ASociator\ASociator\Views\Profile\MyPage.cshtml"
                                                                      Write(ViewData["Edit"]);

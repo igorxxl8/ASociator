@@ -84,7 +84,7 @@ Write(ViewData["Title"]);
             WriteLiteral(" |\r\n\r\n    ");
             EndContext();
             BeginContext(166, 122, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "21975b74e2f14c45a4d83ad1c1abde2c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4da7159a1e7b4efbbf4cbb25ab644d78", async() => {
                 BeginContext(266, 18, false);
 #line 11 "D:\5term\IGI\ASociator\ASociator\Views\Profile\Page.cshtml"
                                                                                                   Write(ViewData["Dialog"]);
@@ -135,7 +135,7 @@ Write(ViewData["Title"]);
             WriteLiteral("        ");
             EndContext();
             BeginContext(331, 146, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2460ecfe98924352b17378a8bf503b4a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "481403df60374602bc74d91654a4997f", async() => {
                 BeginContext(449, 24, false);
 #line 14 "D:\5term\IGI\ASociator\ASociator\Views\Profile\Page.cshtml"
                                                                                                                         Write(ViewData["RemoveFriend"]);
@@ -187,7 +187,7 @@ Write(ViewData["Title"]);
             WriteLiteral("        ");
             EndContext();
             BeginContext(511, 133, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3b1a6aa91b304a28928c5baf9151bbb6", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "156d3baab32c429091528a7048a1d148", async() => {
                 BeginContext(619, 21, false);
 #line 18 "D:\5term\IGI\ASociator\ASociator\Views\Profile\Page.cshtml"
                                                                                                               Write(ViewData["ÄddFriend"]);

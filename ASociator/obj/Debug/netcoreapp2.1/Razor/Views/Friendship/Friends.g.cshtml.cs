@@ -116,7 +116,7 @@ Write(ViewData["Friends"]);
             WriteLiteral("\">\r\n            ");
             EndContext();
             BeginContext(473, 174, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6c00e38a30b54fa3b6e594d6ca77e459", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "394c7d947b79421982c86c63e5db69f3", async() => {
                 BeginContext(553, 18, true);
                 WriteLiteral("\r\n                ");
                 EndContext();
