@@ -41,6 +41,8 @@ namespace ASociator.Migrations
 
                     b.Property<int?>("RoleId");
 
+                    b.Property<string>("Sex");
+
                     b.HasKey("Id");
 
                     b.HasIndex("RoleId");

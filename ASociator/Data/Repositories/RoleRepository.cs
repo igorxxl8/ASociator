@@ -27,7 +27,6 @@ namespace ASociator.Data.Repositories
                     new UserRole { Id = 2, Name = "user" }
             };
             }
-
         }
 
 

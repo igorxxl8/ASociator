@@ -23,8 +23,13 @@ using ASociator.Models;
 
 #line default
 #line hidden
+#line 3 "D:\5term\IGI\ASociator\ASociator\Views\_ViewImports.cshtml"
+using ASociator.ViewModels;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cdcff1e0f528b15ae62c11f239b06d231dfdd512", @"/Views/Administration/Details.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e55d1fd3fabe2429bbecf957df6bd07b298a7452", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3eb65a07f3c77d23cae6743a8e1987d7211ab415", @"/Views/_ViewImports.cshtml")]
     public class Views_Administration_Details : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ASociator.Models.User>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Edit", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -204,7 +209,7 @@ using ASociator.Models;
             WriteLiteral("\r\n        </dd>\r\n    </dl>\r\n</div>\r\n<div>\r\n    <input type=\"button\" onclick=\"javascript:history.back(); return false;\" class=\"btn btn-primary\" value=\"Back\" /> |\r\n    ");
             EndContext();
             BeginContext(1514, 78, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2a05ed8663204983934c0ff838f72077", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "460e4909bbca45258459cfd0e1389a07", async() => {
                 BeginContext(1584, 4, true);
                 WriteLiteral("Edit");
                 EndContext();

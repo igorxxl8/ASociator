@@ -1,20 +1,25 @@
 ﻿@model ASociator.ViewModels.RegisterViewModel
 
-@{
-    ViewData["Title"] = "Register";
-}
 
 <h2>Register new user</h2>
+Already have account?
+<a asp-action="Login" asp-controller="Account">Log in</a>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Register">
+        <form asp-action="Register" method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Email" class="control-label"></label>
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
+
+            <div class="form-group">
+                <label asp-for="Avatar" class="control-label"></label>
+                <input type="file" id="avatar" name="avatar" multiple />
+            </div>
+
             <div class="form-group">
                 <label asp-for="FirstName" class="control-label"></label>
                 <input asp-for="FirstName" class="form-control" />
@@ -27,7 +32,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Sex" class="control-label"></label>
-                <input asp-for="Sex" class="form-control" />
+                <sex-selection asp-for="Sex" class="form-control"></sex-selection>
                 <span asp-validation-for="Sex" class="text-danger"></span>
             </div>
             <div class="form-group">

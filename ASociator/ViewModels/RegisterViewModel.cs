@@ -42,6 +42,9 @@ namespace ASociator.ViewModels
         [Display(Name = "Password")]
         public string Password { get; set; }
 
+        [Display(Name = "Avatar")]
+        public byte[] Avatar { get; set; }
+
         [Required]
         [Compare("Password", ErrorMessage = "Passwords do not match")]
         [DataType(DataType.Password)]

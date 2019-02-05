@@ -1,17 +1,19 @@
 ﻿using ASociator.Data;
 using ASociator.Data.Interfaces;
 using ASociator.Data.Repositories;
-using ASociator.Hubs;
-using ASociator.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using AutoMapper;
+using ASociator.Hubs;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.Extensions.Localization;
+using ASociator.Localization;
+using Microsoft.Extensions.Options;
 
 namespace ASociator
 {
@@ -27,11 +29,15 @@ namespace ASociator
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            string connection = "Server=(localdb)\\mssqllocaldb;Database=new3db;Trusted_Connection=True;";
-            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connection));
-            
+            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddAutoMapper();
+
+            services.AddTransient<IStringLocalizer, CustomStringLocalizer>();
             services.AddScoped<IRoleRepository, RoleRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IFriendshipRepository, FriendshipRepository>();
+            services.AddScoped<IDialogRepository, DialogRepository>();
+            services.AddScoped<IMessageRepository, MessageRepository>();
 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options =>
@@ -40,7 +46,26 @@ namespace ASociator
                     options.AccessDeniedPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
                 });
 
+            services.AddMvc()
+                .AddDataAnnotationsLocalization()
+                .AddViewLocalization();
+
+            services.Configure<RequestLocalizationOptions>(options =>
+            {
+                var supportedCultures = new[]
+                {
+                    new CultureInfo("en"),
+                    new CultureInfo("ru")
+                };
+
+                options.DefaultRequestCulture = new RequestCulture("ru");
+                    options.SupportedCultures = supportedCultures;
+                options.SupportedUICultures = supportedCultures;
+            });
+                
+
             services.AddMvc();
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,19 +81,33 @@ namespace ASociator
                 app.UseHsts();
             }
 
+            var locOptions = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
+            app.UseRequestLocalization(locOptions.Value);
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseAuthentication();
 
+            app.UseSignalR(route =>
+            {
+                route.MapHub<ChatHub>("/chathub");
+            });
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller}/{action}/{id?}",
+                    defaults: new {controller = "Home", action = "Index"}
+                    );
+
                 routes.MapRoute(
                     name: "profile",
-                    template: "{controller=Profile}/{action=MyPage}/{id?}");
+                    template: "{controller}/{action}/{id?}",
+                    defaults: new {controller = "Profile", action = "MyPage"}
+                    );
+                
             });
         }
     }

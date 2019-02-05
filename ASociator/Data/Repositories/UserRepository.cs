@@ -1,6 +1,7 @@
 ﻿using ASociator.Data.Interfaces;
 using ASociator.Models;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -28,7 +29,6 @@ namespace ASociator.Data.Repositories
         public Task<User> GetUserByEmail(string email) => _context.Users.FirstOrDefaultAsync(u => u.Email == email);
 
         public async Task<User> GetUserByPasswordEmail(string password, string email) => await _context.Users
-                                                                                                .Include(u => u.Role)
                                                                                                 .FirstOrDefaultAsync(u => u.Email == email && u.Password == password);
 
 
@@ -49,6 +49,16 @@ namespace ASociator.Data.Repositories
         public bool IsExists(int id)
         {
             return _context.Users.Any(e => e.Id == id);
+        }
+
+        public List<User> GetUsers()
+        {
+            return _context.Set<User>().ToList();
+        }
+
+        public List<User> GetUsersByPartialName(string name)
+        {
+            return _context.Set<User>().ToList().Where(u => u.FirstName.Contains(name, StringComparison.CurrentCultureIgnoreCase) || u.LastName.Contains(name, StringComparison.CurrentCultureIgnoreCase)).ToList();
         }
     }
 }

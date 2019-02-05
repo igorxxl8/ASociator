@@ -1,0 +1,51 @@
+﻿@model UsersListItemViewModel
+
+<style>
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+
+    .grid-item {
+        font-size: 20px;
+    }
+</style>
+
+<hr />
+<div>
+    <div class="thumbnail">
+        <div class="caption">
+            <div class="grid-container">
+                <div class="grid-item">
+                    @if (Model.Avatar != null)
+                    {
+                        <img class="img-responsive center-block" width="200" height="200" src="data:image/jpeg;base64,@Convert.ToBase64String(Model.Avatar)" />
+
+                    }
+                    else
+                    {
+                        <img class="img-responsive center-block" width="200" height="200" src="~/img/default.png" />
+                    }
+                </div>
+                <div class="grid-item">
+                    <h3>
+                        <a asp-controller="Profile" asp-action="Page" asp-route-id="@Model.ID">@Model.FirstName @Model.LastName</a>
+                    </h3>
+                    <h4>@Model.Country, @Model.City</h4>
+                </div>
+                <div class="grid-item">
+                    <p class="button">
+                        <a class="btn btn-success" asp-controller="Dialog" asp-action="NewDialog" asp-route-id="@Model.ID">
+                            @ViewData["Dialog"]
+                        </a>
+                    </p>
+                    <p class="button">
+                        <a class="btn btn-danger" asp-controller="Friendship" asp-action="RemoveFriendshipWithUser" asp-route-id="@Model.ID">
+                            @ViewData["RemoveFriend"]
+                        </a>
+                    </p>
+                </div>
+            </div>
+</div>
+        </div>
+</div>

@@ -1,0 +1,55 @@
+﻿@model ASociator.ViewModels.DialogViewModel
+@section Styles {
+    <link rel="stylesheet" href="~/css/messages/messages.css" />
+    <script type="text/javascript" src="~/js/messages.js"></script>
+    <script src="~/lib/signalr/dist/browser/signalr.js"></script>
+    <script src="~/js/chat.js"></script>
+}
+
+@{
+    ViewData["Title"] = ViewData["Dialog"];
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewData["DialogWith"]  @Model.Addressee</h2>
+
+<h4>@ViewData["Messages"]: <i>@Model.Messages.Count</i></h4>
+<section id="messagesBox" class="messagesBox">
+    @for (int i = 0; i < Model.Messages.Count; i++)
+    {
+        @if (Model.Messages[i].AuthorID == Model.AddresseeID)
+        {
+            <blockquote class="bg-info">
+                <p>
+                    <b>@Model.Addressee:</b>
+                    @Model.Messages[i].Content
+                </p>
+            </blockquote>
+
+        }
+        else
+        {
+            <blockquote class="blockquote-reverse bg-secondary">
+                <p>
+                    @Model.Messages[i].Content
+                </p>
+            </blockquote>
+        }
+    }
+</section>
+
+
+<form id="messageForm">
+    <div class="form-group">
+        <textarea class="form-control" id="messageTextarea" rows="3" placeholder="Start typing text: "></textarea>
+    </div>
+    <button id="sendButton" class="btn btn-success" type="submit">@ViewData["Send"]</button>
+</form>
+
+<script type="text/javascript">
+	var dialog = @Html.Raw(Json.Serialize(Model));
+
+	run_js_with_model(dialog);
+</script>
+
+

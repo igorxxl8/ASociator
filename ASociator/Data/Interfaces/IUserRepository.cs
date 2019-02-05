@@ -20,6 +20,10 @@ namespace ASociator.Data.Interfaces
 
         Task DeleteUser(User user);
 
+        List<User> GetUsers();
+
+        List<User> GetUsersByPartialName(string name);
+
         bool IsExists(int id);
     }
 }

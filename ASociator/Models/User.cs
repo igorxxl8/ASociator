@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -25,5 +26,22 @@ namespace ASociator.Models
         public int? RoleId { get; set; }
         public UserRole Role { get; set; }
         
+        public List<Friendship> Friends { get; set; }
+        
+        public List<Friendship> FriendOf { get; set; }
+
+        public List<Dialog> UserDialogs { get; set; }
+
+        public List<Dialog> DialogsToUser { get; set; }
+
+        public List<Message> Messages { get; set; }
+
+        public byte[] Avatar { get; set; }
+
+        public User()
+        {
+            Friends = new List<Friendship>();
+            FriendOf = new List<Friendship>();
+        }
     }
 }

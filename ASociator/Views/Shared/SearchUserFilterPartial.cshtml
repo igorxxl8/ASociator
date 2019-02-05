@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "SearchUserFilterPartial";
+}
+@model UsersListViewModel
+
+<form method="get">
+    <div class="form-group">
+        <label class="control-label">First name: </label>
+        @Html.TextBox("FirstName", Model.FirstName, htmlAttributes: new { @class = "form-control" })
+
+        <label class="control-label">Last name: </label>
+        @Html.TextBox("LastName", Model.LastName, htmlAttributes: new { @class = "form-control" })
+
+        <label class="control-label">Country: </label>
+        @Html.TextBox("country", Model.Country, htmlAttributes: new { @class = "form-control" })
+
+        <label class="control-label">City: </label>
+        @Html.TextBox("city", Model.City, htmlAttributes: new { @class = "form-control" })
+
+        <label class="control-label">Sex: </label>
+        @Html.DropDownList("sex", Model.Sex as SelectList,
+                htmlAttributes: new { @class = "form-control" })
+        
+
+
+    </div>
+    <input type="submit" value="Filter" class="btn btn-success" />
+</form>
+

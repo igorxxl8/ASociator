@@ -1,0 +1,22 @@
+﻿@model ASociator.ViewModels.UserProfileViewModel
+
+@{
+    ViewData["Title"] = Model.FirstName + " " + Model.LastName;
+}
+
+
+<h2>
+    @ViewData["Title"] |
+
+    <a asp-action="NewDialog" asp-controller="Dialog" class="btn btn-success" asp-route-id="@Model.Id">@ViewData["Dialog"]</a>
+    @if (Model.IsFriend)
+    {
+        <a asp-controller="Friendship" asp-action="RemoveFriendshipWithUser" class="btn btn-danger" asp-route-id="@Model.Id">@ViewData["RemoveFriend"]</a>
+    }
+    else
+    {
+        <a asp-controller="Friendship" asp-action="NewFriendship" class="btn btn-success" asp-route-id="@Model.Id">@ViewData["ÄddFriend"]</a>
+    }
+</h2>
+
+@await Html.PartialAsync("UserProfilePartial", Model)

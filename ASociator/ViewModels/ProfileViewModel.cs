@@ -32,6 +32,9 @@ namespace ASociator.ViewModels
         [Display(Name = "City")]
         public string City { get; set; }
 
+        [Display(Name = "Avatar")]
+        public byte[] Avatar { get; set; }
+
         public ProfileViewModel(User user)
         {
             Id = user.Id;
@@ -42,6 +45,7 @@ namespace ASociator.ViewModels
             BirdthDay = user.BirdthDay;
             Country = user.Country;
             City = user.City;
+            Avatar = user.Avatar;
         }
     }
 }

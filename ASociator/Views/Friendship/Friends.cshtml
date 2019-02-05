@@ -1,0 +1,25 @@
+﻿@model List<ASociator.ViewModels.FriendshipViewModel>
+@{
+    ViewData["Title"] = ViewData["Friends"];
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .users-list {
+        list-style-type: none;
+        padding: 0px;
+    }
+</style>
+
+<h2>@ViewData["Friends"] <i>@Model.Count</i></h2>
+
+<ul class="users-list">
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        <li data-friend-id="@Model[i].FriendId" data-id="@Model[i].ID">
+            <a asp-controller="Profile" asp-action="Page" asp-route-id="@Model[i].FriendId">
+                @await Html.PartialAsync("FriendPartial", Model[i].Friend)
+            </a>
+        </li>
+    }
+</ul>

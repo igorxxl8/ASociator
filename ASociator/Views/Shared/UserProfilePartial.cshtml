@@ -1,0 +1,84 @@
+﻿@model UserProfileViewModel
+
+<style>
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto 200px auto;
+        background-color: #2196F3;
+    }
+
+    .grid-item {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 30px;
+        font-size: 30px;
+    }
+</style>
+
+<hr />
+<div class="grid-container">
+
+    <div class="grid-item">
+        @if (Model.Avatar != null)
+        {
+            <img class="img-responsive center-block" width="400" height="400" src="data:image/jpeg;base64,@Convert.ToBase64String(Model.Avatar)" />
+
+        }
+        else
+        {
+            <img class="img-responsive center-block" width="200" height="200" src="~/img/default.png" />
+        }
+    </div>
+    <div class="grid-item">
+        <p>
+
+            @Html.DisplayNameFor(model => model.Email)
+
+        </p>
+        <p>
+            @Html.DisplayNameFor(model => model.Sex)
+
+        </p>
+
+        <p class="clear_fix profile_info_row">
+
+            @Html.DisplayNameFor(model => model.BirdthDay)
+
+        </p>
+
+        <p class="clear_fix profile_info_row">
+            @Html.DisplayNameFor(model => model.Country)
+
+        </p>
+
+        <p class="clear_fix profile_info_row">
+
+            @Html.DisplayNameFor(model => model.City)
+
+        </p>
+    </div>
+    <div class="grid-item">
+        <p>
+            @Html.DisplayFor(model => model.Email)
+
+        </p>
+        <p>
+            @Html.DisplayFor(model => model.Sex)
+
+        </p>
+
+        <p class="clear_fix profile_info_row">
+            @Html.DisplayFor(model => model.BirdthDay)
+
+        </p>
+
+        <p class="clear_fix profile_info_row">
+            @Html.DisplayFor(model => model.Country)
+
+        </p>
+
+        <p class="clear_fix profile_info_row">
+            @Html.DisplayFor(model => model.City)
+
+        </p>
+    </div>
+</div>
